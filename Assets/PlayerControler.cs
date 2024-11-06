@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("speed", Mathf.Abs(moveInput));
 
         // Handle jumping
-        if (isGrounded && Input.GetButtonDown("Jump") && !isTouchingCeiling)
+        if (!isGrounded && Input.GetButtonDown("Jump") && !isTouchingCeiling)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             isJumping = true;
