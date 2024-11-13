@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class Boss1 : MonoBehaviour
 {
-    public Transform player; // Reference to the player's position
-    public GameObject spearPrefab; // Rust spear projectile
-    public float speed = 2f; // Boss follow speed
-    public float attackDelay = 2f; // Delay between attacks
-    public float spearSpeed = 5f; // Speed of the thrown spear
+    public Transform player; 
+    public GameObject spearPrefab; 
+    public float speed = 2f; 
+    public float attackDelay = 2f;
+    public float spearSpeed = 5f;
 
-    private Animator animator; // Reference to the Animator component
-    private bool isFollowing = false; // Whether the boss is following the player
+    private Animator animator; 
+    private bool isFollowing = false;
+    private int boxCounter = 0;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
-        StartCoroutine(StartBossFight()); // Start the fight sequence
     }
 
     private void Update()
@@ -25,31 +25,41 @@ public class Boss1 : MonoBehaviour
         {
             FollowPlayer();
         }
+
     }
 
-    // Coroutine to handle boss fight sequence
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("rust box")) 
+        {
+            boxCounter++;
+            if (boxCounter >= 6)
+            {
+                StartCoroutine(StartBossFight()); 
+            }
+        }
+    }    // coroutine for the boss attack 
     private IEnumerator StartBossFight()
     {
-        animator.SetTrigger("FlyUp"); // Trigger fly up animation
-        yield return new WaitForSeconds(1f); // Delay to complete fly up animation
+        animator.SetTrigger("FlyUp"); // start fly up animation
+        yield return new WaitForSeconds(1f);
 
-        isFollowing = true; // Start following player
-        yield return new WaitForSeconds(1f); // Delay before first attack
+        isFollowing = true; 
+        yield return new WaitForSeconds(1f); 
 
-        for (int i = 0; i < 3; i++) // Boss attacks three times
+        for (int i = 0; i < 3; i++) //boss attacks three times
         {
-            animator.SetTrigger("Scanning"); // Trigger scanning animation
-            yield return new WaitForSeconds(attackDelay); // Delay for scanning
+            animator.SetTrigger("Scanning"); // start scanning animation
+            yield return new WaitForSeconds(attackDelay); 
 
-            animator.SetTrigger("Throwing"); // Trigger throwing animation
-            Attack(); // Throw spear at the player
-            yield return new WaitForSeconds(attackDelay); // Delay between attacks
+            animator.SetTrigger("Throwing"); // start throwing animation
+            Attack(); // throw spear at the player
+            yield return new WaitForSeconds(attackDelay);
         }
 
-        isFollowing = false; // Stop following after attacks (optional)
     }
 
-    // Method to handle following the player horizontally
+    //  following the player horizontally
     private void FollowPlayer()
     {
         Vector2 targetPosition = new Vector2(player.position.x, transform.position.y);
