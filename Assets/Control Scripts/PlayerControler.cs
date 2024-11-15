@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
 
+    // Variable for push animation
+    public bool isTouchingBox;
+
     // Ground check variables
     public Transform groundCheck;
     public float groundCheckRadius = 0.2f;
@@ -36,6 +39,16 @@ public class PlayerController : MonoBehaviour
         // Check if the player is touching the ceiling
         isTouchingCeiling = Physics2D.OverlapCircle(ceilingCheck.position, ceilingCheckRadius, groundLayer);
 
+        //Check if the player is touching a box
+        if (collision.gameObject.CompareTag("rust pile"))
+            {
+                isTouchingBox == true;
+            }
+        else
+            {
+                isTouchingBox == false;
+            }
+
         // Handle player input
         float moveInput = Input.GetAxis("Horizontal");
 
@@ -59,6 +72,8 @@ public class PlayerController : MonoBehaviour
             isJumping = false;
             animator.SetBool("isJumping", false);
         }
+
+
     }
 
    /// void OnCollisionEnter2D(Collision2D collision)
