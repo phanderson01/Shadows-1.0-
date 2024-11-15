@@ -11,8 +11,9 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
 
-    // Variable for push animation
+    // Variables for push animation
     public bool isTouchingBox;
+    void OnCollisionEnter2D(Collision2D collision)
 
     // Ground check variables
     public Transform groundCheck;
