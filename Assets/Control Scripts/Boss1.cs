@@ -12,6 +12,9 @@ public class Boss1 : MonoBehaviour
 
     private Animator animator; 
     private bool isFollowing = false;
+    private bool FlyUp = false;
+    private bool Throwing = false;
+    private bool Scanning = false; 
     private int boxCounter = 0;
 
     private void Start()
@@ -33,7 +36,7 @@ public class Boss1 : MonoBehaviour
         if (other.CompareTag("rust box")) 
         {
             boxCounter++;
-            if (boxCounter >= 6)
+            if (boxCounter >= 12)
             {
                 StartCoroutine(StartBossFight()); 
             }
@@ -41,19 +44,23 @@ public class Boss1 : MonoBehaviour
     }    // coroutine for the boss attack 
     private IEnumerator StartBossFight()
     {
+        FlyUp = true;
         animator.SetTrigger("FlyUp"); // start fly up animation
-        yield return new WaitForSeconds(1f);
+       
 
         isFollowing = true; 
-        yield return new WaitForSeconds(1f); 
+     
 
         for (int i = 0; i < 3; i++) //boss attacks three times
         {
+            Scanning = true;
             animator.SetTrigger("Scanning"); // start scanning animation
-            yield return new WaitForSeconds(attackDelay); 
-
+            Scanning = false;
+            yield return new WaitForSeconds(1f);
+            Throwing = true;
             animator.SetTrigger("Throwing"); // start throwing animation
             Attack(); // throw spear at the player
+            Throwing = false;
             yield return new WaitForSeconds(attackDelay);
         }
 
