@@ -36,7 +36,7 @@ public class Boss1 : MonoBehaviour
         if (other.CompareTag("rust box")) 
         {
             boxCounter++;
-            if (boxCounter >= 12)
+            if (boxCounter >= 2)
             {
                 StartCoroutine(StartBossFight()); 
             }
@@ -46,7 +46,7 @@ public class Boss1 : MonoBehaviour
     {
         FlyUp = true;
         animator.SetTrigger("FlyUp"); // start fly up animation
-       
+        FlyUp = false;
 
         isFollowing = true; 
      
