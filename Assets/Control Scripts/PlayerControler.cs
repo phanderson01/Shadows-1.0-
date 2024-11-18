@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 
     // Variables for push animation
     public bool isTouchingBox;
-    void OnCollisionEnter2D(Collision2D collision);
+    public abstract void OnCollisionEnter2D(Collision2D collision);
 
     // Ground check variables
     public Transform groundCheck;
