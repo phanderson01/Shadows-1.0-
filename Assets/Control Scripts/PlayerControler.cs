@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 
     // Variables for push animation
     public bool isTouchingBox;
-    void OnCollisionEnter(Collision collision);
+    // void OnCollisionEnter2D(Collision2D collision);
 
     // Ground check variables
     public Transform groundCheck;
@@ -32,6 +32,14 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    void OnCollisionEnter2D(Collision2D collision);
+    {
+        if(collision.gameObject.name == "rust pile")
+        {
+            isTouchingBox == true;
+        }
+    }
+
     void Update()
     {
         // Check if the player is grounded
@@ -39,16 +47,6 @@ public class PlayerController : MonoBehaviour
 
         // Check if the player is touching the ceiling
         isTouchingCeiling = Physics2D.OverlapCircle(ceilingCheck.position, ceilingCheckRadius, groundLayer);
-
-        //Check if the player is touching a box
-        if (collision.gameObject.name == "rust pile")
-            {
-                isTouchingBox == true;
-            }
-        else
-            {
-                isTouchingBox == false;
-            }
 
         // Handle player input
         float moveInput = Input.GetAxis("Horizontal");
