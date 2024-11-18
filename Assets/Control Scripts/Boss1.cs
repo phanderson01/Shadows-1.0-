@@ -44,26 +44,39 @@ public class Boss1 : MonoBehaviour
     }    // coroutine for the boss attack 
     private IEnumerator StartBossFight()
     {
+        Debug.Log("Boss Fight Started");
+
         FlyUp = true;
-        animator.SetTrigger("FlyUp"); // start fly up animation
-        FlyUp = false;
+        animator.SetTrigger("FlyUp"); // Start Fly Up animation
+        yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).IsName("FlyUp") &&
+                                         animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
+        FlyUp = false; // stops flyup from repeating 
+        Debug.Log("FlyUp animation completed");
 
-        isFollowing = true; 
-     
+        isFollowing = true;
+        Debug.Log("Boss is now following the player");
 
-        for (int i = 0; i < 3; i++) //boss attacks three times
+        for (int i = 0; i < 3; i++) // Boss attacks three times
         {
+            Debug.Log($"Boss Attack #{i + 1}");
+
             Scanning = true;
-            animator.SetTrigger("Scanning"); // start scanning animation
+            animator.SetTrigger("Scanning"); // Start Scanning animation
+            yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).IsName("Scanning") &&
+                                             animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
+
             Scanning = false;
-            yield return new WaitForSeconds(1f);
             Throwing = true;
-            animator.SetTrigger("Throwing"); // start throwing animation
-            Attack(); // throw spear at the player
+            animator.SetTrigger("Throwing"); // Start Throwing animation
+            Attack(); // Throw spear at the player
+            yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).IsName("Throwing") &&
+                                             animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
+
             Throwing = false;
-            yield return new WaitForSeconds(attackDelay);
+            yield return new WaitForSeconds(attackDelay); // Delay between attacks
         }
 
+        Debug.Log("Boss Fight Ended");
     }
 
     //  following the player horizontally
