@@ -12,9 +12,6 @@ public class Boss1 : MonoBehaviour
 
     private Animator animator; 
     private bool isFollowing = false;
-    private bool FlyUp = false;
-    private bool Throwing = false;
-    private bool Scanning = false; 
     private int boxCounter = 0;
 
     private void Start()
@@ -36,7 +33,7 @@ public class Boss1 : MonoBehaviour
         if (other.CompareTag("rust box")) 
         {
             boxCounter++;
-            if (boxCounter >= 2)
+            if (boxCounter >= 6)
             {
                 StartCoroutine(StartBossFight()); 
             }
@@ -44,39 +41,22 @@ public class Boss1 : MonoBehaviour
     }    // coroutine for the boss attack 
     private IEnumerator StartBossFight()
     {
-        Debug.Log("Boss Fight Started");
+        animator.SetTrigger("FlyUp"); // start fly up animation
+        yield return new WaitForSeconds(1f);
 
-        FlyUp = true;
-        animator.SetTrigger("FlyUp"); // Start Fly Up animation
-        yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).IsName("FlyUp") &&
-                                         animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
-        FlyUp = false; // stops flyup from repeating 
-        Debug.Log("FlyUp animation completed");
+        isFollowing = true; 
+        yield return new WaitForSeconds(1f); 
 
-        isFollowing = true;
-        Debug.Log("Boss is now following the player");
-
-        for (int i = 0; i < 3; i++) // Boss attacks three times
+        for (int i = 0; i < 3; i++) //boss attacks three times
         {
-            Debug.Log($"Boss Attack #{i + 1}");
+            animator.SetTrigger("Scanning"); // start scanning animation
+            yield return new WaitForSeconds(attackDelay); 
 
-            Scanning = true;
-            animator.SetTrigger("Scanning"); // Start Scanning animation
-            yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).IsName("Scanning") &&
-                                             animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
-
-            Scanning = false;
-            Throwing = true;
-            animator.SetTrigger("Throwing"); // Start Throwing animation
-            Attack(); // Throw spear at the player
-            yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).IsName("Throwing") &&
-                                             animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
-
-            Throwing = false;
-            yield return new WaitForSeconds(attackDelay); // Delay between attacks
+            animator.SetTrigger("Throwing"); // start throwing animation
+            Attack(); // throw spear at the player
+            yield return new WaitForSeconds(attackDelay);
         }
 
-        Debug.Log("Boss Fight Ended");
     }
 
     //  following the player horizontally
