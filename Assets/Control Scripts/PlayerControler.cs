@@ -34,9 +34,9 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision);
     {
-        if(collision.gameObject.name == "rust pile")
+        if(collision.gameObject.name = "rust pile")
         {
-            isTouchingBox == true;
+            isTouchingBox = true;
         }
     }
 
