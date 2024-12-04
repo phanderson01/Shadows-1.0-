@@ -570,6 +570,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6, y: 2.8}
   m_EdgeRadius: 0
+--- !u!4 &188255079 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7260637754748259766, guid: f42c24e5727ba4463b63414097f3e305, type: 3}
+  m_PrefabInstance: {fileID: 312432438}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &276100881
 GameObject:
   m_ObjectHideFlags: 0
@@ -1084,7 +1089,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5160707039516244770, guid: f42c24e5727ba4463b63414097f3e305, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2104657621}
+      addedObject: {fileID: 2104657625}
+    - targetCorrespondingSourceObject: {fileID: 5160707039516244770, guid: f42c24e5727ba4463b63414097f3e305, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2104657627}
   m_SourcePrefab: {fileID: 100100000, guid: f42c24e5727ba4463b63414097f3e305, type: 3}
 --- !u!4 &520261256 stripped
 Transform:
@@ -2140,7 +2148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8332451055470255554, guid: 030f706b8e3104f08bc755ac88d69cb6, type: 3}
       propertyPath: m_TagString
-      value: rust box
+      value: rustBox
       objectReference: {fileID: 0}
     - target: {fileID: 8684787573498751239, guid: 030f706b8e3104f08bc755ac88d69cb6, type: 3}
       propertyPath: m_IsTrigger
@@ -2208,7 +2216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8332451055470255554, guid: 030f706b8e3104f08bc755ac88d69cb6, type: 3}
       propertyPath: m_TagString
-      value: rust box
+      value: rustBox
       objectReference: {fileID: 0}
     - target: {fileID: 8684787573498751239, guid: 030f706b8e3104f08bc755ac88d69cb6, type: 3}
       propertyPath: m_IsTrigger
@@ -2391,7 +2399,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8332451055470255554, guid: 030f706b8e3104f08bc755ac88d69cb6, type: 3}
       propertyPath: m_TagString
-      value: rust box
+      value: rustBox
       objectReference: {fileID: 0}
     - target: {fileID: 8684787573498751239, guid: 030f706b8e3104f08bc755ac88d69cb6, type: 3}
       propertyPath: m_Size.x
@@ -3049,7 +3057,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8332451055470255554, guid: 030f706b8e3104f08bc755ac88d69cb6, type: 3}
       propertyPath: m_TagString
-      value: rust box
+      value: rustBox
       objectReference: {fileID: 0}
     - target: {fileID: 8684787573498751239, guid: 030f706b8e3104f08bc755ac88d69cb6, type: 3}
       propertyPath: m_IsTrigger
@@ -3342,7 +3350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8332451055470255554, guid: 030f706b8e3104f08bc755ac88d69cb6, type: 3}
       propertyPath: m_TagString
-      value: rust box
+      value: rustBox
       objectReference: {fileID: 0}
     - target: {fileID: 8684787573498751239, guid: 030f706b8e3104f08bc755ac88d69cb6, type: 3}
       propertyPath: m_IsTrigger
@@ -4039,8 +4047,8 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5160707039516244770, guid: f42c24e5727ba4463b63414097f3e305, type: 3}
   m_PrefabInstance: {fileID: 312432438}
   m_PrefabAsset: {fileID: 0}
---- !u!60 &2104657621
-PolygonCollider2D:
+--- !u!61 &2104657625
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4071,7 +4079,7 @@ PolygonCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -13.649021, y: 12.267619}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4081,20 +4089,26 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -2.9547806, y: 8.976885}
-      - {x: -6.576294, y: 10.469866}
-      - {x: -9.04258, y: 18.05721}
-      - {x: -13.165702, y: 20.223923}
-      - {x: -15.449921, y: 14.281866}
-      - {x: -11.101761, y: 7.270584}
-      - {x: -8.838417, y: 2.3499107}
-      - {x: -7.0044785, y: 1.0861664}
-      - {x: -4.543306, y: 0.8862077}
-      - {x: -3.6245942, y: 3.04377}
-      - {x: -3.0558405, y: 4.3672867}
-  m_UseDelaunayMesh: 0
+  serializedVersion: 2
+  m_Size: {x: 38.076454, y: 25.535238}
+  m_EdgeRadius: 0
+--- !u!114 &2104657627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104657617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2c62f3278bbc4c69b174e76b567f113, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 188255079}
+  spearPrefab: {fileID: 6227060763600589400, guid: a94a81225608f43adb46bf8378333abf, type: 3}
+  speed: 2
+  attackDelay: 2
+  spearSpeed: 5
 --- !u!1 &2127889247
 GameObject:
   m_ObjectHideFlags: 0
@@ -4428,7 +4442,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8332451055470255554, guid: 030f706b8e3104f08bc755ac88d69cb6, type: 3}
       propertyPath: m_TagString
-      value: rust box
+      value: rustBox
       objectReference: {fileID: 0}
     - target: {fileID: 8684787573498751239, guid: 030f706b8e3104f08bc755ac88d69cb6, type: 3}
       propertyPath: m_Size.x

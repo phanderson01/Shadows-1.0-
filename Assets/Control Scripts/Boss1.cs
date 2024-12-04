@@ -33,10 +33,11 @@ public class Boss1 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("rust box")) 
+        Debug.Log("trigger Works");
+        if (other.CompareTag("rustBox")) 
         {
             boxCounter++;
-            if (boxCounter >= 2)
+            if (boxCounter >= 1)
             {
                 StartCoroutine(StartBossFight()); 
             }
