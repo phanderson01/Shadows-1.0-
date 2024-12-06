@@ -1059,6 +1059,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8893757163542445194, guid: f42c24e5727ba4463b63414097f3e305, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.193787
+      objectReference: {fileID: 0}
+    - target: {fileID: 8893757163542445194, guid: f42c24e5727ba4463b63414097f3e305, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.117243
+      objectReference: {fileID: 0}
+    - target: {fileID: 8893757163542445194, guid: f42c24e5727ba4463b63414097f3e305, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.8659664
       objectReference: {fileID: 0}
@@ -4101,9 +4109,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1673272807}
   spearPrefab: {fileID: 6227060763600589400, guid: a94a81225608f43adb46bf8378333abf, type: 3}
-  speed: 2
+  speed: 10
   attackDelay: 2
-  spearSpeed: 5
+  spearSpeed: 20
 --- !u!1 &2127889247
 GameObject:
   m_ObjectHideFlags: 0

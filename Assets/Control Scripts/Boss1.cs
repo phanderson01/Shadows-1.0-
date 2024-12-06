@@ -8,7 +8,7 @@ public class Boss1 : MonoBehaviour
     public GameObject spearPrefab; 
     public float speed = 10f; 
     public float attackDelay = 2f;
-    public float spearSpeed = 5f;
+    public float spearSpeed = 20f;
 
     private Animator animator; 
     private bool isFollowing = false;
@@ -61,17 +61,19 @@ public class Boss1 : MonoBehaviour
         {
             Debug.Log($"Boss Attack #{i + 1}");
 
-            Scanning = true;
-            animator.SetTrigger("Scanning"); // Start Scanning animation
+            
+            animator.SetBool("Scanning",true); // Start Scanning animation
             yield return new WaitForSeconds(2f);
-            Scanning = false;
-            Throwing = true;
-            animator.SetTrigger("Throwing"); // Start Throwing animation
+            animator.SetBool("Scanning", false);
+            yield return new WaitForSeconds(5f);
+            animator.SetBool("Throwing",true); // Start Throwing animation
             Attack(); // Throw spear at the player
             yield return new WaitForSeconds(5f);
 
-            Throwing = false;
-            yield return new WaitForSeconds(attackDelay); // Delay between attacks
+            animator.SetBool("Throwing", false);
+            yield return new WaitForSeconds(2f); // Delay between attacks
+            animator.SetBool("isFollowing", true);
+            yield return new WaitForSeconds(10f);
         }
 
         Debug.Log("Boss Fight Ended");
