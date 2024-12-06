@@ -570,11 +570,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6, y: 2.8}
   m_EdgeRadius: 0
---- !u!4 &188255079 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7260637754748259766, guid: f42c24e5727ba4463b63414097f3e305, type: 3}
-  m_PrefabInstance: {fileID: 312432438}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &276100881
 GameObject:
   m_ObjectHideFlags: 0
@@ -4104,7 +4099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2c62f3278bbc4c69b174e76b567f113, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 188255079}
+  player: {fileID: 1673272807}
   spearPrefab: {fileID: 6227060763600589400, guid: a94a81225608f43adb46bf8378333abf, type: 3}
   speed: 2
   attackDelay: 2
