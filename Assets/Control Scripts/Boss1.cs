@@ -71,7 +71,7 @@ public class Boss1 : MonoBehaviour
             yield return new WaitForSeconds(5f);
 
             animator.SetBool("Throwing", false);
-            yield return new WaitForSeconds(2f); // Delay between attacks
+             // Delay between attacks
             animator.SetBool("isFollowing", true);
             yield return new WaitForSeconds(10f);
         }
@@ -89,6 +89,7 @@ public class Boss1 : MonoBehaviour
     // Method to handle spear attack
     private void Attack()
     {
+
         GameObject spear = Instantiate(spearPrefab, transform.position, Quaternion.identity);
         Vector2 direction = (player.position - transform.position).normalized;
         spear.GetComponent<Rigidbody2D>().velocity = direction * spearSpeed;
