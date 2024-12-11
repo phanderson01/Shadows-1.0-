@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e100a603abdf84bf3a693903749c6ab1
+guid: 400a3bc6ff5ae4617bfb27b06cc76c6b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,11 +43,11 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0, y: 0}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -110,28 +110,28 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: back upper arm
+      name: paper texture player sprite_0
       rect:
         serializedVersion: 2
         x: 694
         y: 1638
         width: 280
         height: 144
-      alignment: 9
-      pivot: {x: 0.8706122, y: 0.74021316}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae4986c468a6b403a9dda1ad09bfe38d
-      internalID: 838450598
+      spriteID: 6aa18a0eab7a44f12868d78a1d02da2d
+      internalID: 1278455391
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: back shoulder
+      name: paper texture player sprite_1
       rect:
         serializedVersion: 2
         x: 1007
@@ -139,104 +139,104 @@ TextureImporter:
         width: 104
         height: 101
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dbdbca8f2b2de4e7d8e5e461068a1a4a
-      internalID: 1888399962
+      spriteID: 1899e733a6a234ea7a36f0458b5d9a04
+      internalID: 1717503444
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: upper torso
+      name: paper texture player sprite_2
       rect:
         serializedVersion: 2
-        x: 1299
+        x: 1296
         y: 1501
         width: 291
         height: 360
-      alignment: 9
-      pivot: {x: 0.32594493, y: 0.17692362}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24f9d2a1bfb324499ba801436df8daa0
-      internalID: 1283828690
+      spriteID: c6dde1350a9e24edfb13c806d7b7fe37
+      internalID: -1242211958
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: head
+      name: paper texture player sprite_3
       rect:
         serializedVersion: 2
-        x: 1708
+        x: 1711
         y: 1630
         width: 239
         height: 282
-      alignment: 9
-      pivot: {x: 0.27737796, y: 0.23794967}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 789207c5e0074460b833aa0f788581ef
-      internalID: -1094275819
+      spriteID: 5fa7822b399f7422e83e603f91f45cd8
+      internalID: -737557251
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: back forearm
+      name: paper texture player sprite_4
       rect:
         serializedVersion: 2
         x: 340
         y: 1383
         width: 212
         height: 239
-      alignment: 9
-      pivot: {x: 0.7719381, y: 0.79635406}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9728436e286b44b758595ea825766c8d
-      internalID: 902693044
+      spriteID: 0ed650ce891ed499f81be0ae3c5e53e5
+      internalID: -2106509720
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: back elbow
+      name: paper texture player sprite_5
       rect:
         serializedVersion: 2
-        x: 565
+        x: 562
         y: 1618
         width: 88
         height: 91
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ab584f69dcc7487995f56e410e0ba8f
-      internalID: 764399686
+      spriteID: 438509eb5465a4e12b7108db1a37698c
+      internalID: 125859826
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: front shoulder
+      name: paper texture player sprite_6
       rect:
         serializedVersion: 2
         x: 658
@@ -244,41 +244,41 @@ TextureImporter:
         width: 127
         height: 116
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6141f111d74e46bc9a8d6f7154d2c30
-      internalID: 1182173952
+      spriteID: cae6bebb2e944477b8937c18746a74de
+      internalID: -1385829330
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: front hand
+      name: paper texture player sprite_7
       rect:
         serializedVersion: 2
         x: 1018
         y: 1508
         width: 205
         height: 108
-      alignment: 9
-      pivot: {x: 0.825605, y: 0.6765849}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f74ab8c050cb4636b4618a69c5a9326
-      internalID: 619730895
+      spriteID: 2726c3d2b80244b35b15bfb1d6a72230
+      internalID: 924680053
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: neck
+      name: paper texture player sprite_8
       rect:
         serializedVersion: 2
         x: 1703
@@ -286,104 +286,104 @@ TextureImporter:
         width: 123
         height: 119
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ccd4ae9f703f4fc3b6a01ce7e9a2a31
-      internalID: 1770620802
+      spriteID: 9e4ec0453bafa4642abd98cc2ebe7060
+      internalID: 2118208894
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: front wrist
+      name: paper texture player sprite_9
       rect:
         serializedVersion: 2
         x: 1125
-        y: 1386
+        y: 1383
         width: 81
         height: 81
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 450730c5fc7844432bfdb5ccd5d58977
-      internalID: -506981180
+      spriteID: 0545d772bb4c64e34be21b7be76994f0
+      internalID: -1764560607
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: back wrist
+      name: paper texture player sprite_14
       rect:
         serializedVersion: 2
         x: 269
-        y: 1246
+        y: 1249
         width: 81
         height: 79
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a34b8333de1704c0dbf6b0c3955699f6
-      internalID: -1694846577
+      spriteID: aa1751ff3601549d38ac131f5e856659
+      internalID: 1135179923
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: front upper arm
+      name: paper texture player sprite_15
       rect:
         serializedVersion: 2
         x: 589
         y: 1166
         width: 204
         height: 241
-      alignment: 9
-      pivot: {x: 0.25777063, y: 0.78705823}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00d801c0010c94a2d9c5288f2c3fa314
-      internalID: 335218603
+      spriteID: a8c9010d7746b494aa738ef7005f88d8
+      internalID: 893100703
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: front forearm
+      name: paper texture player sprite_16
       rect:
         serializedVersion: 2
         x: 951
         y: 1125
         width: 223
         height: 229
-      alignment: 9
-      pivot: {x: 0.26054156, y: 0.24183142}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4e0e29bb18864e6ea4b5c664c34051d
-      internalID: -706963723
+      spriteID: 3c4cb6e8c2c344b80b34637fc5cbf015
+      internalID: 973851695
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: waist
+      name: paper texture player sprite_17
       rect:
         serializedVersion: 2
         x: 1312
@@ -391,104 +391,104 @@ TextureImporter:
         width: 185
         height: 167
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dfe25ff4cdea645ba83a6e4130b6becf
-      internalID: -1701209908
+      spriteID: 9159b67dd86ea4402b1083d6d6f9f208
+      internalID: -496153025
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hips
+      name: paper texture player sprite_18
       rect:
         serializedVersion: 2
         x: 1569
         y: 1061
         width: 275
         height: 245
-      alignment: 9
-      pivot: {x: 0.51078033, y: 0.8025266}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a3de39f1469e4f97a509df68ff55ed9
-      internalID: -313518196
+      spriteID: 2e0f5dad19ae04b93869b861fbc2190e
+      internalID: 1702995779
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: back hand
+      name: paper texture player sprite_19
       rect:
         serializedVersion: 2
         x: 153
         y: 1024
         width: 124
         height: 194
-      alignment: 9
-      pivot: {x: 0.81880593, y: 0.8735842}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7dc685518ae294d13964a2cb90bf39d5
-      internalID: -721705363
+      spriteID: d81e68e915f7b44008b77ebbab09b69d
+      internalID: 1806335106
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: front elbow
+      name: paper texture player sprite_20
       rect:
         serializedVersion: 2
         x: 801
-        y: 1096
+        y: 1099
         width: 100
         height: 105
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9887308be1c2445448415ef440b3ef48
-      internalID: -1061430805
+      spriteID: 070e3aa7490de441da0e06b41536dab2
+      internalID: -1184765708
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: back thigh
+      name: paper texture player sprite_21
       rect:
         serializedVersion: 2
-        x: 260
+        x: 263
         y: 538
         width: 208
         height: 367
-      alignment: 9
-      pivot: {x: 0.69955105, y: 0.8069779}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0228a8fe537494ab98dbedf5c2a436b7
-      internalID: -441787500
+      spriteID: 79ddf6f0ec5e2467fa4fdaf4eade24cd
+      internalID: 361918616
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: front butt
+      name: paper texture player sprite_22
       rect:
         serializedVersion: 2
         x: 970
@@ -496,41 +496,41 @@ TextureImporter:
         width: 121
         height: 150
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41cc212d5c0534e6f89ec963c66c3a8b
-      internalID: -1379170890
+      spriteID: 5d29149d3ca55427eaea9551fd872be1
+      internalID: -491260629
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: front thigh
+      name: paper texture player sprite_23
       rect:
         serializedVersion: 2
-        x: 1201
+        x: 1198
         y: 722
         width: 335
         height: 310
-      alignment: 9
-      pivot: {x: 0.2167987, y: 0.76778483}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38f139efd49734348915e1d07a49e7cd
-      internalID: -1488229099
+      spriteID: 5f9671c2713514f5a88400639285e3ae
+      internalID: -473282819
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: front knee
+      name: paper texture player sprite_24
       rect:
         serializedVersion: 2
         x: 1626
@@ -538,41 +538,41 @@ TextureImporter:
         width: 115
         height: 106
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f669811a6f1548238a3b4ff7596f396
-      internalID: 245180993
+      spriteID: b551375ebc1fa46d9833cad1964ab556
+      internalID: 230148864
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: back butt
+      name: paper texture player sprite_25
       rect:
         serializedVersion: 2
-        x: 563
-        y: 664
+        x: 560
+        y: 667
         width: 126
         height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da543890421c24fcc8f28dc83ddd9a00
-      internalID: -42848878
+      spriteID: f006dda1ed37c4ccabac51d5d97cbed1
+      internalID: 2093412602
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: back knee
+      name: paper texture player sprite_26
       rect:
         serializedVersion: 2
         x: 1004
@@ -580,41 +580,41 @@ TextureImporter:
         width: 111
         height: 118
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7280d1fcf45204df2bb1936423d55bb6
-      internalID: 891940140
+      spriteID: bf4007825f76b474b9a6f065d0f1137e
+      internalID: 309526152
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: back foot
+      name: paper texture player sprite_27
       rect:
         serializedVersion: 2
         x: 247
         y: 145
         width: 113
         height: 285
-      alignment: 9
-      pivot: {x: 0.5524735, y: 0.76006687}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ffce926316a5c4b939a9db49363863b7
-      internalID: 1129722566
+      spriteID: 46f2296c0c68c4a7fb20a3200daad690
+      internalID: 1438159471
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: back ankle
+      name: paper texture player sprite_28
       rect:
         serializedVersion: 2
         x: 400
@@ -622,62 +622,62 @@ TextureImporter:
         width: 79
         height: 78
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32b53e197bd48494fbe2e11249377936
-      internalID: -852425641
+      spriteID: c8bc699d83f5f4768a518309ee3b4798
+      internalID: 899422370
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: back calf
+      name: paper texture player sprite_29
       rect:
         serializedVersion: 2
         x: 542
         y: 412
         width: 407
         height: 211
-      alignment: 9
-      pivot: {x: 0.8715057, y: 0.6826629}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09744ebdef37c416bbca0d9bb7041c06
-      internalID: -353910926
+      spriteID: 0333b647d14834459b42aafa1fda072f
+      internalID: -1436513535
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: front calf
+      name: paper texture player sprite_30
       rect:
         serializedVersion: 2
         x: 1543
         y: 246
         width: 170
         height: 419
-      alignment: 9
-      pivot: {x: 0.55216426, y: 0.85979086}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e6441cb4b9b34213965b13b0822c9da
-      internalID: 188903056
+      spriteID: b516eb4dc0ee24c498795fd52f10d037
+      internalID: -960051692
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: front ankle
+      name: paper texture player sprite_31
       rect:
         serializedVersion: 2
         x: 1227
@@ -685,35 +685,35 @@ TextureImporter:
         width: 75
         height: 75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93f92f293013846b88dadd1b95b0c522
-      internalID: -575344329
+      spriteID: fa3d8dd6ac1474eba890e44ed9de5cce
+      internalID: 1580552974
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: front foot
+      name: paper texture player sprite_32
       rect:
         serializedVersion: 2
         x: 1174
         y: 122
         width: 292
         height: 79
-      alignment: 9
-      pivot: {x: 0.2671701, y: 0.7245018}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e240d8e545fe048d2a22198cf0b6640b
-      internalID: -1098672809
+      spriteID: e2fecdc6f20424e40b2586c0fa543f81
+      internalID: -1674566082
       vertices: []
       indices: 
       edges: []
@@ -722,48 +722,46 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
-    secondaryTextures:
-    - texture: {fileID: 2800000, guid: c804a34f2e67d4b528b5a374c3e65690, type: 3}
-      name: _MaskTex
+    secondaryTextures: []
     nameFileIdTable:
-      IMG_0971_10: 1861049445
-      IMG_0971_11: 2111005170
-      IMG_0971_12: -960840990
-      IMG_0971_13: 1410485385
-      back ankle: -852425641
-      back butt: -42848878
-      back calf: -353910926
-      back elbow: 764399686
-      back foot: 1129722566
-      back forearm: 902693044
-      back hand: -721705363
-      back knee: 891940140
-      back shoulder: 1888399962
-      back thigh: -441787500
-      back upper arm: 838450598
-      back wrist: -1694846577
-      front ankle: -575344329
-      front butt: -1379170890
-      front calf: 188903056
-      front elbow: -1061430805
-      front foot: -1098672809
-      front forearm: -706963723
-      front hand: 619730895
-      front knee: 245180993
-      front shoulder: 1182173952
-      front thigh: -1488229099
-      front upper arm: 335218603
-      front wrist: -506981180
-      head: -1094275819
-      hips: -313518196
-      neck: 1770620802
-      upper torso: 1283828690
-      waist: -1701209908
+      paper texture player sprite_0: 1278455391
+      paper texture player sprite_1: 1717503444
+      paper texture player sprite_10: -768062728
+      paper texture player sprite_11: 1324860030
+      paper texture player sprite_12: 1101149421
+      paper texture player sprite_13: -155215048
+      paper texture player sprite_14: 1135179923
+      paper texture player sprite_15: 893100703
+      paper texture player sprite_16: 973851695
+      paper texture player sprite_17: -496153025
+      paper texture player sprite_18: 1702995779
+      paper texture player sprite_19: 1806335106
+      paper texture player sprite_2: -1242211958
+      paper texture player sprite_20: -1184765708
+      paper texture player sprite_21: 361918616
+      paper texture player sprite_22: -491260629
+      paper texture player sprite_23: -473282819
+      paper texture player sprite_24: 230148864
+      paper texture player sprite_25: 2093412602
+      paper texture player sprite_26: 309526152
+      paper texture player sprite_27: 1438159471
+      paper texture player sprite_28: 899422370
+      paper texture player sprite_29: -1436513535
+      paper texture player sprite_3: -737557251
+      paper texture player sprite_30: -960051692
+      paper texture player sprite_31: 1580552974
+      paper texture player sprite_32: -1674566082
+      paper texture player sprite_4: -2106509720
+      paper texture player sprite_5: 125859826
+      paper texture player sprite_6: -1385829330
+      paper texture player sprite_7: 924680053
+      paper texture player sprite_8: 2118208894
+      paper texture player sprite_9: -1764560607
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
