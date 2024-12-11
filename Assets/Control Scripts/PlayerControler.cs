@@ -31,6 +31,15 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
+
+    void OnCollisionEnter2D(Collision2D collision);
+    {
+        if(collision.gameObject.name = "rust pile")
+        {
+            isTouchingBox = true;
+        }
+    }
+
     void Update()
     {
         // Check if the player is grounded
