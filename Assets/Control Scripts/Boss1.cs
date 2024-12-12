@@ -9,7 +9,7 @@ public class Boss1 : MonoBehaviour
     public float speed = 10f; 
     public float attackDelay = 2f;
     public float spearSpeed = 20f;
-
+    public Transform bone_1; 
     private Animator animator; 
     private bool isFollowing = false;
     private bool FlyUp = false;
@@ -46,7 +46,6 @@ public class Boss1 : MonoBehaviour
     private IEnumerator StartBossFight()
     {
         Debug.Log("Boss Fight Started");
-
         
         animator.SetBool("FlyUp",true); // Start Fly Up animation
         yield return new WaitForSeconds(10f);
@@ -90,8 +89,9 @@ public class Boss1 : MonoBehaviour
     private void Attack()
     {
 
-        GameObject spear = Instantiate(spearPrefab, transform.position, Quaternion.identity);
-        Vector2 direction = (player.position - transform.position).normalized;
+        GameObject spear = Instantiate(spearPrefab, Vector3.zero, Quaternion.identity);
+        spear.transform.localPosition= bone_1.transform.position;
+        Vector2 direction = (player.position - spear.transform.position).normalized;
         spear.GetComponent<Rigidbody2D>().velocity = direction * spearSpeed;
     }
 }
