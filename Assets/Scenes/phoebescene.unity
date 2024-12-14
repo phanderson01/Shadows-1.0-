@@ -570,6 +570,50 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6, y: 2.8}
   m_EdgeRadius: 0
+--- !u!1 &133591323
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 133591325}
+  - component: {fileID: 133591324}
+  m_Layer: 0
+  m_Name: Tile_map
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!156049354 &133591324
+Grid:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133591323}
+  m_Enabled: 1
+  m_CellSize: {x: 1, y: 1, z: 1}
+  m_CellGap: {x: 0, y: 0, z: 0}
+  m_CellLayout: 0
+  m_CellSwizzle: 0
+--- !u!4 &133591325
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133591323}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.335046, y: -4.4731436, z: -0.08907732}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &276100881
 GameObject:
   m_ObjectHideFlags: 0
@@ -766,10 +810,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7143949861866869292, guid: e4b2fa4c316944e4abaf7ec0703182c4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1673272813}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4b2fa4c316944e4abaf7ec0703182c4, type: 3}
 --- !u!1 &311603820
 GameObject:
@@ -1084,13 +1125,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5160707039516244770, guid: f42c24e5727ba4463b63414097f3e305, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1118570842}
-    - targetCorrespondingSourceObject: {fileID: 5160707039516244770, guid: f42c24e5727ba4463b63414097f3e305, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1118570846}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f42c24e5727ba4463b63414097f3e305, type: 3}
 --- !u!4 &520261256 stripped
 Transform:
@@ -2546,7 +2581,6 @@ PrefabInstance:
       addedObject: {fileID: 839919574}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5ac60e95c5724f07a3ac470176a6387, type: 3}
-
 --- !u!1 &1262264952
 GameObject:
   m_ObjectHideFlags: 0
@@ -3668,48 +3702,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6092840426913502512, guid: e4b2fa4c316944e4abaf7ec0703182c4, type: 3}
   m_PrefabInstance: {fileID: 302521236}
   m_PrefabAsset: {fileID: 0}
---- !u!23 &1673272813
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1096753482}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1678316851
 GameObject:
   m_ObjectHideFlags: 0
@@ -4465,3 +4457,6 @@ SceneRoots:
   - {fileID: 851656942}
   - {fileID: 1646573236}
   - {fileID: 857404000}
+  - {fileID: 312432438}
+  - {fileID: 2873243278784373437}
+  - {fileID: 133591325}
