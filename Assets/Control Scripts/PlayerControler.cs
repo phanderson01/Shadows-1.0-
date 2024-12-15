@@ -22,10 +22,14 @@ public class PlayerController : MonoBehaviour
     public float ceilingCheckRadius = 0.2f;
     private bool isTouchingCeiling;
 
+    public int maxHealth = 12; // Total hits allowed
+    private int currentHealth;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        currentHealth = maxHealth;
     }
 
     void Update()
@@ -45,6 +49,15 @@ public class PlayerController : MonoBehaviour
         // Update animation parameters
         animator.SetFloat("speed", Mathf.Abs(moveInput));
 
+        if (moveInput > 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1); // Face right
+        }
+        else if (moveInput < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1); // Face left
+        }
+
         // Handle jumping
         if (!isGrounded && Input.GetButtonDown("Jump") && !isTouchingCeiling)
         {
@@ -59,15 +72,46 @@ public class PlayerController : MonoBehaviour
             isJumping = false;
             animator.SetBool("isJumping", false);
         }
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Check if the player was hit by a spear
+        if (collision.gameObject.CompareTag("Spear"))
+        {
+            TakeDamage(1); // Decrease health by 1 per spear hit
+            Destroy(collision.gameObject); // Destroy the spear
+        }
     }
 
-   /// void OnCollisionEnter2D(Collision2D collision)
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        Debug.Log("Player Health: " + currentHealth);
+
+        // Optional: Trigger hurt animation or effects
+        animator.SetTrigger("hurt");
+    }
+
+    void Die()
+    {
+        Debug.Log("Player has died!");
+        // Disable player movement and trigger death animation
+        animator.SetBool("isDead", true);
+        this.enabled = false; // Disable this script
+        // Additional death logic (e.g., restart level, show game over screen) can be added here
+    }
+
+    /// void OnCollisionEnter2D(Collision2D collision)
     ///{
-        // Example of handling pushing behavior
-      ///  if (collision.gameObject.CompareTag("Pushable"))
-      //  {
-           // Logic to handle pushing objects can be added here
-      //      Debug.Log("Pushing an object!");
-      //  }
+    // Example of handling pushing behavior
+    ///  if (collision.gameObject.CompareTag("Pushable"))
+    //  {
+    // Logic to handle pushing objects can be added here
+    //      Debug.Log("Pushing an object!");
+    //  }
     //}
 }
