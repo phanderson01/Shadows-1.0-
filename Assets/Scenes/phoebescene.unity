@@ -1133,6 +1133,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5160707039516244770, guid: f42c24e5727ba4463b63414097f3e305, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2104657625}
+    - targetCorrespondingSourceObject: {fileID: 5160707039516244770, guid: f42c24e5727ba4463b63414097f3e305, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2104657627}
   m_SourcePrefab: {fileID: 100100000, guid: f42c24e5727ba4463b63414097f3e305, type: 3}
 --- !u!4 &520261256 stripped
 Transform:
@@ -3859,6 +3866,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &1693781089 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8893757163542445194, guid: f42c24e5727ba4463b63414097f3e305, type: 3}
+  m_PrefabInstance: {fileID: 312432438}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1839737210
 GameObject:
   m_ObjectHideFlags: 0
@@ -4149,6 +4161,7 @@ MonoBehaviour:
   speed: 10
   attackDelay: 2
   spearSpeed: 20
+  bone_1: {fileID: 1693781089}
 --- !u!1 &2127889247
 GameObject:
   m_ObjectHideFlags: 0
@@ -4531,3 +4544,6 @@ SceneRoots:
   - {fileID: 851656942}
   - {fileID: 1646573236}
   - {fileID: 857404000}
+  - {fileID: 2873243278784373437}
+  - {fileID: 312432438}
+  - {fileID: 133591325}
