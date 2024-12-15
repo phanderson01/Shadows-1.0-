@@ -16,7 +16,7 @@ public class audio_play : MonoBehaviour
     {
         
     }
-    public void walking_sound()
+    public void start_sound()
     {
         aud.Play();
     }
