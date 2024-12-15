@@ -1097,6 +1097,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2104657627}
   m_SourcePrefab: {fileID: 100100000, guid: f42c24e5727ba4463b63414097f3e305, type: 3}
+--- !u!4 &312432439 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8893757163542445194, guid: f42c24e5727ba4463b63414097f3e305, type: 3}
+  m_PrefabInstance: {fileID: 312432438}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &520261256 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 39565624678612159, guid: 320f5f5865aa7495faffda4b6c9c5d8c, type: 3}
@@ -4112,6 +4117,7 @@ MonoBehaviour:
   speed: 10
   attackDelay: 2
   spearSpeed: 20
+  bone_1: {fileID: 312432439}
 --- !u!1 &2127889247
 GameObject:
   m_ObjectHideFlags: 0
