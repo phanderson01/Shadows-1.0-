@@ -6,10 +6,10 @@ public class Boss1 : MonoBehaviour
 {
     public Transform player; 
     public GameObject spearPrefab; 
-    public float speed = 2f; 
+    public float speed = 10f; 
     public float attackDelay = 2f;
-    public float spearSpeed = 5f;
-
+    public float spearSpeed = 20f;
+    public Transform bone_1; 
     private Animator animator; 
     private bool isFollowing = false;
     private bool FlyUp = false;
@@ -33,10 +33,11 @@ public class Boss1 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("rust box")) 
+        Debug.Log("trigger Works");
+        if (other.CompareTag("rustBox")) 
         {
             boxCounter++;
-            if (boxCounter >= 2)
+            if (boxCounter >= 1)
             {
                 StartCoroutine(StartBossFight()); 
             }
@@ -45,35 +46,33 @@ public class Boss1 : MonoBehaviour
     private IEnumerator StartBossFight()
     {
         Debug.Log("Boss Fight Started");
-
-        FlyUp = true;
-        animator.SetTrigger("FlyUp"); // Start Fly Up animation
-        yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).IsName("FlyUp") &&
-                                         animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
-        FlyUp = false; // stops flyup from repeating 
+        
+        animator.SetBool("FlyUp",true); // Start Fly Up animation
+        yield return new WaitForSeconds(10f);
+        animator.SetBool("FlyUp", false); 
         Debug.Log("FlyUp animation completed");
 
         isFollowing = true;
         Debug.Log("Boss is now following the player");
+        yield return new WaitForSeconds(10f);
 
         for (int i = 0; i < 3; i++) // Boss attacks three times
         {
             Debug.Log($"Boss Attack #{i + 1}");
 
-            Scanning = true;
-            animator.SetTrigger("Scanning"); // Start Scanning animation
-            yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).IsName("Scanning") &&
-                                             animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
-
-            Scanning = false;
-            Throwing = true;
-            animator.SetTrigger("Throwing"); // Start Throwing animation
+            
+            animator.SetBool("Scanning",true); // Start Scanning animation
+            yield return new WaitForSeconds(2f);
+            animator.SetBool("Scanning", false);
+            yield return new WaitForSeconds(5f);
+            animator.SetBool("Throwing",true); // Start Throwing animation
             Attack(); // Throw spear at the player
-            yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).IsName("Throwing") &&
-                                             animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
+            yield return new WaitForSeconds(5f);
 
-            Throwing = false;
-            yield return new WaitForSeconds(attackDelay); // Delay between attacks
+            animator.SetBool("Throwing", false);
+             // Delay between attacks
+            animator.SetBool("isFollowing", true);
+            yield return new WaitForSeconds(10f);
         }
 
         Debug.Log("Boss Fight Ended");
@@ -89,8 +88,10 @@ public class Boss1 : MonoBehaviour
     // Method to handle spear attack
     private void Attack()
     {
-        GameObject spear = Instantiate(spearPrefab, transform.position, Quaternion.identity);
-        Vector2 direction = (player.position - transform.position).normalized;
+
+        GameObject spear = Instantiate(spearPrefab, Vector3.zero, Quaternion.identity);
+        spear.transform.localPosition= bone_1.transform.position;
+        Vector2 direction = (player.position - spear.transform.position).normalized;
         spear.GetComponent<Rigidbody2D>().velocity = direction * spearSpeed;
     }
 }
