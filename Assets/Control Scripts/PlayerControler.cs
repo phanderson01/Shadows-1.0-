@@ -34,15 +34,9 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision);
     {
-<<<<<<< HEAD
-        if(collision.gameObject.name == "rust pile")
-        {
-            isTouchingBox == true;
-=======
         if(collision.gameObject.name = "rust pile")
         {
             isTouchingBox = true;
->>>>>>> parent of 4117013 (player controler fix)
         }
     }
 
