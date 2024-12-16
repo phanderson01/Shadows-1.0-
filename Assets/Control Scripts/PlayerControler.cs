@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     // Variables for movement
@@ -22,14 +22,14 @@ public class PlayerController : MonoBehaviour
     public float ceilingCheckRadius = 0.2f;
     private bool isTouchingCeiling;
 
-    public int maxHealth = 12; // Total hits allowed
+    public int maxHealth = 3; // Total hits allowed
     private int currentHealth;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        currentHealth = maxHealth;
+        currentHealth = 3;
     }
 
     void Update()
@@ -73,6 +73,37 @@ public class PlayerController : MonoBehaviour
         }
         if (currentHealth <= 0)
         {
+            StartCoroutine(Die()); // Start the Coroutine for dying
+        }
+    }
+
+    IEnumerator Die()
+    {
+        Debug.Log("Player has died!");
+
+        // Disable player movement and trigger death animation
+        animator.SetBool("dead", true);
+
+        // Wait for 10 seconds or the duration of the death animation
+        yield return new WaitForSeconds(10f);
+
+        // Optional: Trigger any reset logic or scene change after death
+        animator.SetBool("dead", false);
+
+        SceneManager.LoadScene("GameOverScene");
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("trigger Works");
+        if (other.CompareTag("Spear"))
+        {
+
+            TakeDamage(1); // Decrease health by 1 per spear hit
+            Destroy(other.gameObject); // Destroy the spear
+        }
+        else if (other.CompareTag("Ground")) {
+            Destroy(other.gameObject);
+
             Die();
         }
     }
@@ -95,9 +126,10 @@ public class PlayerController : MonoBehaviour
 
     void TakeDamage(int damage)
     {
-        currentHealth -= damage;
+        currentHealth -= 1;
         Debug.Log("Player Health: " + currentHealth);
 
+       
         
     }
 
