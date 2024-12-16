@@ -37,7 +37,7 @@ public class Boss1 : MonoBehaviour
         if (other.CompareTag("rustBox")) 
         {
             boxCounter++;
-            if (boxCounter >= 1)
+            if (boxCounter >= 2)
             {
                 StartCoroutine(StartBossFight()); 
             }
