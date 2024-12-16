@@ -104,25 +104,8 @@ public class PlayerController : MonoBehaviour
         else if (other.CompareTag("Ground")) {
             Destroy(other.gameObject);
 
-            Die();
         }
     }
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log("trigger Works");
-        if (other.CompareTag("Spear"))
-        {
-            TakeDamage(1); // Decrease health by 1 per spear hit
-            Destroy(other.gameObject); // Destroy the spear
-        }
-        else if (other.CompareTag("Ground"))
-        {
-            // If the spear hits the ground, destroy it
-            Destroy(other.gameObject);
-        }
-    }
-     
-    
 
     void TakeDamage(int damage)
     {
@@ -130,16 +113,6 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Player Health: " + currentHealth);
 
        
-        
-    }
-
-    void Die()
-    {
-        Debug.Log("Player has died!");
-        // Disable player movement and trigger death animation
-        animator.SetBool("dead", true);
-        yield return new WaitForSeconds(10f);
-        animator.SetBool("dead", false);
     }
 
     
