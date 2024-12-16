@@ -3,10 +3,10 @@ using UnityEngine.SceneManagement;
  
 public class LoadGamePlay : MonoBehaviour
 {
-   public string myScene = "";
+   public string nextScene = "";
 
    public void LoadLevel()
    {
-      SceneManager.LoadScene(myScene);
+      SceneManager.LoadScene(nextScene);
    }
 }
