@@ -83,14 +83,14 @@ public class PlayerController : MonoBehaviour
 
         // Disable player movement and trigger death animation
         animator.SetBool("dead", true);
+        animator.SetBool("dead", false);
+        // Optional: Trigger any reset logic or scene change after death
 
         // Wait for 10 seconds or the duration of the death animation
         yield return new WaitForSeconds(10f);
 
-        // Optional: Trigger any reset logic or scene change after death
-        animator.SetBool("dead", false);
 
-        SceneManager.LoadScene("GameOverScene");
+        SceneManager.LoadScene("transition");
     }
     void OnTriggerEnter2D(Collider2D other)
     {
