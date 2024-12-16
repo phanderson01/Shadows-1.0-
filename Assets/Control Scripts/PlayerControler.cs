@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     // Variables for movement
@@ -73,7 +73,12 @@ public class PlayerController : MonoBehaviour
         }
         if (currentHealth <= 0)
         {
-            Die();
+            Debug.Log("Player has died!");
+            // Disable player movement and trigger death animation
+            animator.SetBool("dead", true);
+            yield return new WaitForSeconds(10f);
+            animator.SetBool("dead", false);
+            SceneManager.LoadScene("Opening and closing scene (video)");
         }
     }
     void OnTriggerEnter2D(Collider2D other)
@@ -101,14 +106,7 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    void Die()
-    {
-        Debug.Log("Player has died!");
-        // Disable player movement and trigger death animation
-        animator.SetBool("dead", true);
-        yield return new WaitForSeconds(10f);
-        animator.SetBool("dead", false);
-    }
+    
 
     
 }
