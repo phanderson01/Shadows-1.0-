@@ -71,33 +71,43 @@ public class PlayerController : MonoBehaviour
             isJumping = false;
             animator.SetBool("isJumping", false);
         }
-    }
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        // Check if the player was hit by a spear
-        if (collision.gameObject.CompareTag("Spear"))
+        if (currentHealth <= 0)
         {
-            TakeDamage(1); // Decrease health by 1 per spear hit
-            Destroy(collision.gameObject); // Destroy the spear
+            Die();
         }
     }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("trigger Works");
+        if (other.CompareTag("Spear"))
+        {
+            TakeDamage(1); // Decrease health by 1 per spear hit
+            Destroy(other.gameObject); // Destroy the spear
+        }
+        else if (other.CompareTag("Ground"))
+        {
+            // If the spear hits the ground, destroy it
+            Destroy(other.gameObject);
+        }
+    }
+     
+    
 
     void TakeDamage(int damage)
     {
         currentHealth -= damage;
         Debug.Log("Player Health: " + currentHealth);
 
-        // Optional: Trigger hurt animation or effects
-        animator.SetTrigger("hurt");
+        
     }
 
     void Die()
     {
         Debug.Log("Player has died!");
         // Disable player movement and trigger death animation
-        animator.SetBool("isDead", true);
-        this.enabled = false; // Disable this script
-        // Additional death logic (e.g., restart level, show game over screen) can be added here
+        animator.SetBool("dead", true);
+        yield return new WaitForSeconds(10f);
+        animator.SetBool("dead", false);
     }
 
     
