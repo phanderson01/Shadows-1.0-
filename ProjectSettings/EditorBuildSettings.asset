@@ -5,13 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
     path: Assets/Scenes/menu.unity
     guid: a27c1b9f43ed04d35b37f2c5f10ed2f4
   - enabled: 1
-    path: Assets/Scenes/Opening and closing scene (video).unity
+    path: Assets/Scenes/transition.unity
     guid: 571f40c0177804ee598a89fef16170fd
+  - enabled: 1
+    path: Assets/Scenes/Scene2.unity
+    guid: 737fa57874ecf46c78e591aeeb9011b0
   m_configObjects: {}
