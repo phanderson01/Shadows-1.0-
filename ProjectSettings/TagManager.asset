@@ -7,6 +7,8 @@ TagManager:
   - rust box
   - spearPrefab
   - rustBox
+  - Spear
+  - Ground
   layers:
   - Default
   - TransparentFX

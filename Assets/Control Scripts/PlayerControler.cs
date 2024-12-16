@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     // Variables for movement
@@ -22,14 +22,14 @@ public class PlayerController : MonoBehaviour
     public float ceilingCheckRadius = 0.2f;
     private bool isTouchingCeiling;
 
-    public int maxHealth = 12; // Total hits allowed
+    public int maxHealth = 3; // Total hits allowed
     private int currentHealth;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        currentHealth = maxHealth;
+        currentHealth = 3;
     }
 
     void Update()
@@ -71,33 +71,48 @@ public class PlayerController : MonoBehaviour
             isJumping = false;
             animator.SetBool("isJumping", false);
         }
-    }
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        // Check if the player was hit by a spear
-        if (collision.gameObject.CompareTag("Spear"))
+        if (currentHealth <= 0)
         {
+            StartCoroutine(Die()); // Start the Coroutine for dying
+        }
+    }
+
+    IEnumerator Die()
+    {
+        Debug.Log("Player has died!");
+
+        // Disable player movement and trigger death animation
+        animator.SetBool("dead", true);
+
+        // Wait for 10 seconds or the duration of the death animation
+        yield return new WaitForSeconds(10f);
+
+        // Optional: Trigger any reset logic or scene change after death
+        animator.SetBool("dead", false);
+
+        SceneManager.LoadScene("GameOverScene");
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("trigger Works");
+        if (other.CompareTag("Spear"))
+        {
+
             TakeDamage(1); // Decrease health by 1 per spear hit
-            Destroy(collision.gameObject); // Destroy the spear
+            Destroy(other.gameObject); // Destroy the spear
+        }
+        else if (other.CompareTag("Ground")) {
+            Destroy(other.gameObject);
+
         }
     }
 
     void TakeDamage(int damage)
     {
-        currentHealth -= damage;
+        currentHealth -= 1;
         Debug.Log("Player Health: " + currentHealth);
 
-        // Optional: Trigger hurt animation or effects
-        animator.SetTrigger("hurt");
-    }
-
-    void Die()
-    {
-        Debug.Log("Player has died!");
-        // Disable player movement and trigger death animation
-        animator.SetBool("isDead", true);
-        this.enabled = false; // Disable this script
-        // Additional death logic (e.g., restart level, show game over screen) can be added here
+       
     }
 
     
