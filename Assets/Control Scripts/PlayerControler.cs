@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     // Variables for movement
@@ -22,10 +22,14 @@ public class PlayerController : MonoBehaviour
     public float ceilingCheckRadius = 0.2f;
     private bool isTouchingCeiling;
 
+    public int maxHealth = 12; // Total hits allowed
+    private int currentHealth;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        currentHealth = maxHealth;
     }
 
     void Update()
@@ -45,6 +49,14 @@ public class PlayerController : MonoBehaviour
         // Update animation parameters
         animator.SetFloat("speed", Mathf.Abs(moveInput));
 
+        if (moveInput > 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1); // Face right
+        }
+        else if (moveInput < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1); // Face left
+        }
         // Handle jumping
         if (!isGrounded && Input.GetButtonDown("Jump") && !isTouchingCeiling)
         {
@@ -59,15 +71,42 @@ public class PlayerController : MonoBehaviour
             isJumping = false;
             animator.SetBool("isJumping", false);
         }
+        if (currentHealth <= 0)
+        {
+            Debug.Log("Player has died!");
+            // Disable player movement and trigger death animation
+            animator.SetBool("dead", true);
+            yield return new WaitForSeconds(10f);
+            animator.SetBool("dead", false);
+            SceneManager.LoadScene("Opening and closing scene (video)");
+        }
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("trigger Works");
+        if (other.CompareTag("Spear"))
+        {
+            TakeDamage(1); // Decrease health by 1 per spear hit
+            Destroy(other.gameObject); // Destroy the spear
+        }
+        else if (other.CompareTag("Ground"))
+        {
+            // If the spear hits the ground, destroy it
+            Destroy(other.gameObject);
+        }
+    }
+     
+    
+
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        Debug.Log("Player Health: " + currentHealth);
+
+        
     }
 
-   /// void OnCollisionEnter2D(Collision2D collision)
-    ///{
-        // Example of handling pushing behavior
-      ///  if (collision.gameObject.CompareTag("Pushable"))
-      //  {
-           // Logic to handle pushing objects can be added here
-      //      Debug.Log("Pushing an object!");
-      //  }
-    //}
+    
+
+    
 }
